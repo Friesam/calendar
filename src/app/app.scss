@@ -4,3 +4,10 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+:root {
+    --text-color: #1A66B4;
+    --background-color: #6487BB;
+    --calendar-button: #8BB148;
+    --month-color: #FFD047;
+    --day-colr: #E45F5F;
+}

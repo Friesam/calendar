@@ -44,13 +44,13 @@
   <ion-row>
     <!-- Change the displayed calendar mode -->
     <ion-col size="4">
-      <ion-button expand="block" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">Month</ion-button>
+      <ion-button expand="block" class="month" [color]="calendar.mode == 'month'" (click)="changeMode('month')">Month</ion-button>
     </ion-col>
     <ion-col size="4">
-      <ion-button expand="block" [color]="calendar.mode == 'week' ? 'primary' : 'secondary'" (click)="changeMode('week')">Week</ion-button>
+      <ion-button expand="block" class="week" [color]="calendar.mode == 'week'" (click)="changeMode('week')">Week</ion-button>
     </ion-col>
     <ion-col size="4">
-      <ion-button expand="block" [color]="calendar.mode == 'day' ? 'primary' : 'secondary'" (click)="changeMode('day')">Day</ion-button>
+      <ion-button expand="block" class="day" [color]="calendar.mode == 'day'" (click)="changeMode('day')">Day</ion-button>
     </ion-col>
  
     <!-- Move back one screen of the slides -->
