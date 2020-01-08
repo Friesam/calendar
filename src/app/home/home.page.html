@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header >  
   <ion-toolbar color="primary">
     <ion-title>
       {{ viewTitle }}
@@ -10,7 +10,12 @@
 </ion-header>
  
 <ion-content>
- 
+  <ion-item>
+    <div class="parent">
+      <div class="header">Make a todo list</div>
+    </div>
+  </ion-item>
+
   <!-- Card for adding a new event -->
   <ion-card>
     <ion-card-header tappable (click)="collapseCard = !collapseCard">

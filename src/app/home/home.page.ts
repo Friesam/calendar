@@ -9,7 +9,6 @@ import { formatDate } from '@angular/common';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
- 
   event = {
     title: '',
     desc: '',
@@ -17,25 +16,18 @@ export class HomePage implements OnInit {
     endTime: '',
     allDay: false
   };
- 
   minDate = new Date().toISOString();
- 
   eventSource = [];
   viewTitle;
- 
   calendar = {
     mode: 'month',
     currentDate: new Date(),
   };
- 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
- 
   constructor(private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string) { }
- 
   ngOnInit() {
     this.resetEvent();
   }
- 
   resetEvent() {
     this.event = {
       title: '',
@@ -45,10 +37,9 @@ export class HomePage implements OnInit {
       allDay: false
     };
   }
- 
   // Create the right event format and reload source
   addEvent() {
-    let eventCopy = {
+    const eventCopy = {
       title: this.event.title,
       startTime:  new Date(this.event.startTime),
       endTime: new Date(this.event.endTime),
@@ -57,8 +48,8 @@ export class HomePage implements OnInit {
     }
  
     if (eventCopy.allDay) {
-      let start = eventCopy.startTime;
-      let end = eventCopy.endTime;
+      const start = eventCopy.startTime;
+      const end = eventCopy.endTime;
  
       eventCopy.startTime = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
       eventCopy.endTime = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate() + 1));
@@ -70,12 +61,12 @@ export class HomePage implements OnInit {
   }
  // Change current month/week/day
  next() {
-  var swiper = document.querySelector('.swiper-container')['swiper'];
+  const swiper = document.querySelector('.swiper-container')['swiper'];
   swiper.slideNext();
 }
  
 back() {
-  var swiper = document.querySelector('.swiper-container')['swiper'];
+  const swiper = document.querySelector('.swiper-container')['swiper'];
   swiper.slidePrev();
 }
  
@@ -116,4 +107,20 @@ onTimeSelected(ev) {
   selected.setHours(selected.getHours() + 1);
   this.event.endTime = (selected.toISOString());
 }
+
+updateTransition() {
+  var el = document.querySelector("div.header");
+   
+  if (el) {
+    el.className = "header1";
+  } else {
+    el = document.querySelector("div.header1");
+    el.className = "header";
+  }
+   
+  return el;
+}
+
+intervalID = window.setInterval(this.updateTransition, 7000);
+
 }
